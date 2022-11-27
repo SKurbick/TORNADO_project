@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block body %}
+<form action="/predict" method = "POST">
+    первый арг: <input name="sepal_length" type="text"><br>
+    второй арг:<input name="sepal_width" type="text"><br>
+    третий арг:<input name="petal_length" type="text"><br>
+    четвертый арг:<input name="petal_width" type="text"><br>
+    {% module xsrf_form_html() %}
+    <input type="submit" value="Посчитать">
+</form>
+<hr>
+<h2> Ваш результат: {{ predict }}</h2>
+<hr>
+{% end %}
